@@ -8,7 +8,7 @@ from analyze_html_by_LLM.analyze_html_by_EEVE import HTMLAnalyzerBot, clean_html
 
 if __name__ == "__main__" :
 
-    df = pd.read_csv("C:/Users/Dolphinnn/VscodeProjects/Crawling_n_Analyze_by_EEVE/data/Enterprise_url_from_GDWEB.csv")
+    df = pd.read_csv("C:/Users/COM/VscodeProject/Crawling_n_Analyze_by_EEVE/data/Enterprise_url_from_GDWEB.csv")
     
     urls = df.iloc[:,1].to_list()
 
@@ -27,8 +27,8 @@ if __name__ == "__main__" :
         if ok_or_not == "Usable":
             Usable_urls.append(url)
            
-    save_urls = pd.DataFrame(Usable_urls, index=False)
-    save_urls.to_csv("C:/Users/Dolphinnn/VscodeProjects/Crawling_n_Analyze_by_EEVE/data/checked_urls.csv", encoding="utf-8-sig")
+    save_urls = pd.DataFrame(Usable_urls)
+    save_urls.to_csv("C:/Users/COM/VscodeProject/Crawling_n_Analyze_by_EEVE/data/checked_urls.csv", encoding="utf-8-sig", header=False, index=False)
     
     print("save checked urls!")
 
@@ -48,17 +48,19 @@ if __name__ == "__main__" :
         # HTML 길이
         print("len(clean_content) : ", len(clean_content))        
 
-        # 실행
-        result_dict = {}
+        cutted_clean_content = clean_content[:50000]
         
-        result_of_LLM = analyze_html(clean_content)
+        # 실행
+        result_list = []
+        
+        result_of_LLM = analyze_html(cutted_clean_content)
         print("type(result_of_LLM) : ", type(result_of_LLM))
         print("len(result_of_LLM) : ", len(result_of_LLM))
         
-        result_dict[Usable_url] = result_of_LLM
+        result_list.append([Usable_url, result_of_LLM, len(clean_content), len(cutted_clean_content)])
         
-    result_df = pd.DataFrame.from_dict(data=result_dict, orient='index')
+    result_df = pd.DataFrame(data=result_list, columns=['url', 'Analyze_Content','Original_len', 'Cutted_len'])
     
-    result_df.to_csv("C:/Users/Dolphinnn/VscodeProjects/Crawling_n_Analyze_by_EEVE/data/analyze_result.csv", encoding="utf-8-sig")
+    result_df.to_csv("C:/Users/COM/VscodeProject/Crawling_n_Analyze_by_EEVE/data/analyze_result.csv", encoding="utf-8-sig")
     print("Result is saved!!")
     

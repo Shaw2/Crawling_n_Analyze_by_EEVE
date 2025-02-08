@@ -1,19 +1,5 @@
-from bs4 import BeautifulSoup
+
 import requests
-
-def clean_html(html):
-    """필요 없는 태그를 제거하는 함수"""
-    soup = BeautifulSoup(html, "html.parser")
-
-    # 제거할 태그 목록
-    remove_tags = ["script", "style", "meta", "link", "iframe", "embed", "object", "noscript"]
-
-    for tag in soup.find_all(remove_tags):
-        tag.decompose()  # 해당 태그 제거
-
-    return soup.prettify()
-
-
 from bs4 import BeautifulSoup
 import ollama
 import textwrap
@@ -171,8 +157,20 @@ import asyncio
 #     print(result)
 
 
+def clean_html(html):
+    """필요 없는 태그를 제거하는 함수"""
+    soup = BeautifulSoup(html, "html.parser")
+
+    # 제거할 태그 목록
+    remove_tags = ["script", "style", "meta", "link", "iframe", "embed", "object", "noscript"]
+
+    for tag in soup.find_all(remove_tags):
+        tag.decompose()  # 해당 태그 제거
+
+    return soup.prettify()
+
 class HTMLAnalyzerBot:
-    def __init__(self, model_name: str = "DS_Q4_K_M:v1", chunk_size: int = 4000):
+    def __init__(self, model_name: str = "EEVE_test:latest", chunk_size: int = 4000):
         """
         HTML 분석을 위한 챗봇 초기화
         
@@ -198,6 +196,7 @@ class HTMLAnalyzerBot:
         # BeautifulSoup을 사용하여 HTML 파싱
         soup = BeautifulSoup(html_content, 'html.parser')
         
+        # NOTE : 분할하는게 맞을까? 분할을 하게되면 흐름을 잃지 않으려나
         # 의미 있는 단위로 분할 (예: div, section, article 등)
         meaningful_tags = ['div', 'section', 'article', 'main', 'header', 'footer']
         sections = []

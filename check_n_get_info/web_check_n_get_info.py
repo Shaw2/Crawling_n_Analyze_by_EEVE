@@ -28,7 +28,7 @@ class WebRequestHandler:
             handler.setFormatter(formatter)
             self.logger.addHandler(handler)
 
-    def get_url_content(self, url: str, timeout: int = 10) -> Optional[str]:
+    def get_url_content(self, url: str, timeout: int = 3) -> Optional[str]:
         """
         URL로부터 컨텐츠를 안전하게 가져오기
         
@@ -86,7 +86,10 @@ def process_multiple_urls(urls: list) -> Dict[str, Optional[str]]:
     handler = WebRequestHandler(verify_ssl=False)
     results = {}
     
-    for url in urls:
+    for i, url in enumerate(urls, 1):
+        
+        print(f"Current count : {i}/{len(urls)}")
+        
         content = handler.get_url_content(url)
         results[url] = content
         
