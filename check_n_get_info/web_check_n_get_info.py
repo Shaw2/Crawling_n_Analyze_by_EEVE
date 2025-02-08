@@ -46,6 +46,7 @@ class WebRequestHandler:
                 timeout=timeout
             )
             response.raise_for_status()
+            self.logger.info("Usable URL!")
             return "Usable"
             
         except SSLError as e:
