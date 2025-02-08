@@ -203,8 +203,11 @@ class HTMLAnalyzerBot:
         sections = []
         
         for tag in meaningful_tags:
+            # print("What is tag ? : ", tag)
             elements = soup.find_all(tag)
+            # print("====================================")
             for element in elements:
+                # print("What is element ? : ", element)
                 sections.append(str(element))
         
         # 청크로 나누기
@@ -216,6 +219,7 @@ class HTMLAnalyzerBot:
                 current_chunk += section
             else:
                 if current_chunk:
+                    print("len(current_chunk) is appended in chunk : ", len(current_chunk))
                     chunks.append(current_chunk)
                 current_chunk = section
         
@@ -293,24 +297,26 @@ def analyze_html(html_content: str):
     """
     analyzer = HTMLAnalyzerBot()
     analyzer.add_html_content(html_content)
+    # return None
     return analyzer.process_chunks()
 
 # 실행 코드
 if __name__ == "__main__":
     
     # 테스트할 URL (예제)
-    url = "https://dlchemical.co.kr/"
-    response = requests.get(url)
+    url = "http://flip.dorelan.co.kr/"
+    response = requests.get(url, verify=False)
 
     if response.status_code == 200:
         clean_content = clean_html(response.text)
-        print(clean_content)  # 정리된 HTML 출력
+        # print(clean_content)  # 정리된 HTML 출력
     else:
         print("페이지를 가져오지 못했습니다.")    
     
-    # 예시 HTML
-    html_example = clean_content
+    # HTML 길이이
+    print("len(clean_content) : ", len(clean_content))
+    
     
     # 실행
-    result = analyze_html(html_example)
+    result = analyze_html(clean_content)
     print(result)

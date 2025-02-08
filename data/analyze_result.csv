@@ -1,0 +1,60 @@
+﻿,0
+https://google.com/,"### HTML 문서의 구조 및 주요 특징
+
+1. **DOCTYPE 선언**
+   - `<!DOCTYPE html>`으로 HTML5 문서형식을 선언하고 있습니다.
+   
+2. **html 태그**
+   - `lang=""ko""`로 한국어로 지정했습니다.
+   - `xml:namespace` 속성 없이 간단한 구조입니다.
+
+3. **head 태그**
+   - meta 태그로 UTF-8 인코딩과 viewport 설정을 했습니다.
+   - title 태그에 ""Google""이라고 작성했습니다.
+   - 이미지 링크를 포함하고 있습니다.
+   - CSS 스타일을 정의하고 있습니다.
+
+4. **body 태그**
+   - 기본적으로 Arial 폰트, margin 0, padding 0으로 구성했습니다.
+   - several div로 구조를 잡고 있습니다.
+
+5. **div#mngb**
+   - 주 컨테이너 역할을 합니다.
+   - 내부에 gbar, guser, XjhHGf, ds 등의 div가 포함됩니다.
+
+6. **div#gbar**
+   - nobr 태그 안에 검색, 이미지, 지도, Play, YouTube, 뉴스, Gmail, 드라이브, 더보기 버튼이 있습니다.
+   - gb1 클래스로 스타일을 지정하고 있습니다.
+
+7. **div#guser**
+   - width=""100%""로 꽉 채워집니다.
+   - nobr 태그 안에 '-', '-', '-'가 포함됩니다.
+
+8. **div#XjhHGf**
+   - Google 로고 이미지를 담은 div입니다.
+   - height=""92""으로固定 높이와 width=""272""을 지정했습니다.
+
+9. **div#ds**
+   - input 태그로 검색창을 제공하고 있습니다.
+   - class ""lst Ucigb""를 통해 스타일을 지정하고 있습니다.
+
+10. **CSS 스타일**
+    - gb1, gbi, gbf, gb4, ds, hplogo 등多个 클래스가 존재하며 각자 스타일이 지정되어 있습니다.
+    - 이미지 크기, 위치, 폰트 크기, 색상 등이指定되고 있습니다.
+
+11. **meta viewport**
+    - responsive design을 위해 viewport meta 태그를 사용하고 있습니다.
+
+12. **input autocomplete**
+    - 검색창에 autocomplete=""off""으로 설정했습니다.
+
+### 주요 특징
+- Google의 브랜드 이미지와 유사한 디자인을 가지고 있습니다.
+- 간단한 HTML 구조로 레이아웃을 구성하고 있습니다.
+- CSS를 통해 스타일을 지정하는 대중적인 방법을 사용하고 있습니다.
+- 검색창과 로고가 포함된 간결한 인터페이스를 제공하고 있습니다.
+
+### 활용可能性
+- 웹 페이지의 기본 틀림을 제공하기 위해 유용합니다.
+- 구글 브랜드와 유사한 디자인을 원할 때에 사용할 수 있습니다.
+- HTML/CSS 기초를 배우는 데 적합한 예제로 사용할 수 있습니다."
