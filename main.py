@@ -45,13 +45,15 @@ if __name__ == "__main__" :
 # 
 # =================================================
 
+# 충돌 테스트용
+
     resting_time = 120
 
     df = pd.read_csv("C:/Users/COM/VscodeProject/Crawling_n_Analyze_by_EEVE/data/checked_urls.csv")
 
     for temp_num in range(1,11):
 
-        Usable_urls = df.iloc[1:2,0].to_list()
+        Usable_urls = df.iloc[1:2,0].to_list() # temp_num*100
         
         limit_html_len = 50000
         
