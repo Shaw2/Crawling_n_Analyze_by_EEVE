@@ -51,7 +51,7 @@ if __name__ == "__main__" :
 
     for temp_num in range(1,11):
 
-        Usable_urls = df.iloc[1:2,0].to_list()
+        Usable_urls = df.iloc[:temp_num*100,0].to_list()
         
         limit_html_len = 50000
         
@@ -69,7 +69,7 @@ if __name__ == "__main__" :
             
         result_df = pd.DataFrame(data=result_list, columns=['url', 'Analyze_Content','Original_len', 'Cutted_len'])
         
-        result_df.to_csv(f"C:/Users/Dolphinnn/VscodeProjects/Crawling_n_Analyze_by_EEVE/data/analyze_result_{temp_num}.csv", encoding="utf-8-sig")
+        result_df.to_csv(f"C:/Users/COM/VscodeProject/Crawling_n_Analyze_by_EEVE/data/analyze_result_{temp_num}.csv", encoding="utf-8-sig")
         
         print("Result is saved!!")
         
