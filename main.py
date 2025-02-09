@@ -45,6 +45,8 @@ if __name__ == "__main__" :
 # 
 # =================================================
 
+# 충돌 테스트용
+
     resting_time = 120
 
     df = pd.read_csv("C:/Users/COM/VscodeProject/Crawling_n_Analyze_by_EEVE/data/checked_urls.csv")
