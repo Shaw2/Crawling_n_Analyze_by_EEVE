@@ -2,10 +2,13 @@
 import requests
 from bs4 import BeautifulSoup
 import ollama
-import textwrap
 from typing import List, Dict
+import logging
+
+import textwrap
 import re
 import asyncio
+
 
 # def clean_html(html):
 #     """필요 없는 태그를 제거하는 함수"""
@@ -157,18 +160,6 @@ import asyncio
 #     print(result)
 
 
-def clean_html(html):
-    """필요 없는 태그를 제거하는 함수"""
-    soup = BeautifulSoup(html, "html.parser")
-
-    # 제거할 태그 목록
-    remove_tags = ["script", "style", "meta", "link", "iframe", "embed", "object", "noscript"]
-
-    for tag in soup.find_all(remove_tags):
-        tag.decompose()  # 해당 태그 제거
-
-    return soup.prettify()
-
 class HTMLAnalyzerBot:
     def __init__(self, model_name: str = "EEVE_test:latest", chunk_size: int = 4000):
         """
@@ -183,6 +174,41 @@ class HTMLAnalyzerBot:
         self.chunks: List[str] = []
         self.current_context = ""
         
+        # 로깅 설정
+        self.logger = logging.getLogger(__name__)
+        self.logger.setLevel(logging.INFO)
+        
+        if not self.logger.handlers:
+            handler = logging.StreamHandler()
+            formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+            handler.setFormatter(formatter)
+            self.logger.addHandler(handler)
+            
+
+    def clean_html_from_url(self, url):
+        """필요 없는 태그를 제거하는 함수"""
+        
+        response = requests.get(url, verify=False)
+
+        if response.status_code == 200:
+        
+            soup = BeautifulSoup(response.text, "html.parser")
+            self.logger.info(f"현재 처리중 - {url}")
+            
+            # 제거할 태그 목록
+            remove_tags = ["script", "style", "meta", "link", "iframe", "embed", "object", "noscript"]
+
+            for tag in soup.find_all(remove_tags):
+                tag.decompose()  # 해당 태그 제거
+
+        else:
+            print("페이지를 가져오지 못했습니다.")
+            
+        clean_content = soup.prettify()
+        
+        self.logger.info(f"len(clean_content) : {len(clean_content)}")
+        return soup.prettify()
+
     def chunk_html(self, html_content: str) -> List[str]:
         """
         HTML을 청크로 분할
@@ -269,7 +295,7 @@ class HTMLAnalyzerBot:
                 "content": response['message']['content']
             })
             
-            print(f"청크 {i}/{len(self.chunks)} 처리 완료")
+            self.logger.info(f"청크 {i}/{len(self.chunks)} 처리 완료")
         
         # 최종 분석 요청
         messages.append({
@@ -284,7 +310,7 @@ class HTMLAnalyzerBot:
         
         return final_response['message']['content']
 
-def analyze_html(html_content: str):
+def analyze_html(url: str):
     """
     HTML 분석 실행 함수
     
@@ -295,7 +321,10 @@ def analyze_html(html_content: str):
         str: 분석 결과
     """
     analyzer = HTMLAnalyzerBot()
-    analyzer.add_html_content(html_content)
+    
+    clean_html = analyzer.clean_html_from_url(url)
+    analyzer.add_html_content(clean_html)
+    
     # return None
     return analyzer.process_chunks()
 
@@ -303,19 +332,9 @@ def analyze_html(html_content: str):
 if __name__ == "__main__":
     
     # 테스트할 URL (예제)
-    url = "http://flip.dorelan.co.kr/"
-    response = requests.get(url, verify=False)
-
-    if response.status_code == 200:
-        clean_content = clean_html(response.text)
-        # print(clean_content)  # 정리된 HTML 출력
-    else:
-        print("페이지를 가져오지 못했습니다.")    
-    
-    # HTML 길이이
-    print("len(clean_content) : ", len(clean_content))
+    url = "https://www.google.com/"
     
     
     # 실행
-    result = analyze_html(clean_content)
+    result = analyze_html(url)
     print(result)
