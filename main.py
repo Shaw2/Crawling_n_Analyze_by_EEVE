@@ -45,11 +45,11 @@ if __name__ == "__main__" :
 # 
 # =================================================
 
-    df = pd.read_csv("C:/Users/Dolphinnn/VscodeProjects/Crawling_n_Analyze_by_EEVE/data/checked_urls.csv")
+    df = pd.read_csv("C:/Users/COM/VscodeProject/Crawling_n_Analyze_by_EEVE/data/checked_urls.csv")
 
     temp_num = 1
 
-    Usable_urls = df.iloc[:100*temp_num,0].to_list()
+    Usable_urls = df.iloc[1:2,0].to_list() # 100*temp_num
     
     limit_html_len = 50000
     
@@ -67,6 +67,6 @@ if __name__ == "__main__" :
         
     result_df = pd.DataFrame(data=result_list, columns=['url', 'Analyze_Content','Original_len', 'Cutted_len'])
     
-    result_df.to_csv(f"C:/Users/Dolphinnn/VscodeProject/Crawling_n_Analyze_by_EEVE/data/analyze_result_{temp_num}.csv", encoding="utf-8-sig")
+    result_df.to_csv(f"C:/Users/COM/VscodeProject/Crawling_n_Analyze_by_EEVE/data/analyze_result_{temp_num}.csv", encoding="utf-8-sig")
     print("Result is saved!!")
     

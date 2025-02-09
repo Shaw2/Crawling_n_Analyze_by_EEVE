@@ -331,3 +331,127 @@
 2025-02-09 12:06:53,686 - INFO - 没农 1/41 贸府 肯丰
 2025-02-09 12:07:08,940 - INFO - 没农 2/41 贸府 肯丰
 2025-02-09 12:07:19,888 - INFO - 没农 3/41 贸府 肯丰
+2025-02-09 12:23:42,993 - INFO - 泅犁 贸府吝 - https://www.jakomosofa.com/
+2025-02-09 12:23:43,014 - INFO - len(clean_content) : 62992
+2025-02-09 12:23:43,024 - INFO - len(cutted_clean_html) : 50000
+2025-02-09 12:23:43,090 - INFO - current_chunk_count :  0
+2025-02-09 12:23:43,090 - INFO - len(current_chunk) : 3347
+2025-02-09 12:23:43,090 - INFO - current_chunk_count :  1
+2025-02-09 12:23:43,090 - INFO - len(current_chunk) : 6075
+2025-02-09 12:23:43,091 - INFO - current_chunk_count :  2
+2025-02-09 12:23:43,091 - INFO - len(current_chunk) : 2560
+2025-02-09 12:23:43,091 - INFO - current_chunk_count :  3
+2025-02-09 12:23:43,091 - INFO - len(current_chunk) : 2601
+2025-02-09 12:23:43,091 - INFO - current_chunk_count :  4
+2025-02-09 12:23:43,091 - INFO - len(current_chunk) : 23675
+2025-02-09 12:23:43,091 - INFO - current_chunk_count :  5
+2025-02-09 12:23:43,091 - INFO - len(current_chunk) : 23511
+2025-02-09 12:23:43,091 - INFO - current_chunk_count :  6
+2025-02-09 12:23:43,091 - INFO - len(current_chunk) : 2608
+2025-02-09 12:23:43,092 - INFO - current_chunk_count :  7
+2025-02-09 12:23:43,092 - INFO - len(current_chunk) : 3774
+2025-02-09 12:23:43,092 - INFO - current_chunk_count :  8
+2025-02-09 12:23:43,092 - INFO - len(current_chunk) : 3853
+2025-02-09 12:23:43,092 - INFO - current_chunk_count :  9
+2025-02-09 12:23:43,092 - INFO - len(current_chunk) : 3822
+2025-02-09 12:23:43,092 - INFO - current_chunk_count :  10
+2025-02-09 12:23:43,092 - INFO - len(current_chunk) : 3971
+2025-02-09 12:23:43,092 - INFO - current_chunk_count :  11
+2025-02-09 12:23:43,092 - INFO - len(current_chunk) : 3873
+2025-02-09 12:23:43,092 - INFO - current_chunk_count :  12
+2025-02-09 12:23:43,093 - INFO - len(current_chunk) : 3877
+2025-02-09 12:23:43,093 - INFO - current_chunk_count :  13
+2025-02-09 12:23:43,093 - INFO - len(current_chunk) : 3861
+2025-02-09 12:23:43,093 - INFO - current_chunk_count :  14
+2025-02-09 12:23:43,093 - INFO - len(current_chunk) : 3851
+2025-02-09 12:23:43,093 - INFO - current_chunk_count :  15
+2025-02-09 12:23:43,093 - INFO - len(current_chunk) : 3695
+2025-02-09 12:23:43,093 - INFO - current_chunk_count :  16
+2025-02-09 12:23:43,094 - INFO - len(current_chunk) : 3917
+2025-02-09 12:23:43,094 - INFO - current_chunk_count :  17
+2025-02-09 12:23:43,094 - INFO - len(current_chunk) : 3684
+2025-02-09 12:23:43,094 - INFO - current_chunk_count :  18
+2025-02-09 12:23:43,094 - INFO - len(current_chunk) : 2436
+2025-02-09 12:23:43,094 - INFO - current_chunk_count :  19
+2025-02-09 12:23:43,094 - INFO - len(current_chunk) : 3573
+2025-02-09 12:23:43,094 - INFO - current_chunk_count :  20
+2025-02-09 12:23:43,094 - INFO - len(current_chunk) : 3102
+2025-02-09 12:23:43,094 - INFO - current_chunk_count :  21
+2025-02-09 12:23:43,094 - INFO - len(current_chunk) : 7124
+2025-02-09 12:23:43,095 - INFO - current_chunk_count :  22
+2025-02-09 12:23:43,095 - INFO - len(current_chunk) : 28
+2025-02-09 12:23:43,095 - INFO - current_chunk_count :  23
+2025-02-09 12:23:43,095 - INFO - len(current_chunk) : 7064
+2025-02-09 12:23:43,095 - INFO - current_chunk_count :  24
+2025-02-09 12:23:43,095 - INFO - len(current_chunk) : 1586
+2025-02-09 12:23:43,096 - INFO - current_chunk_count :  25
+2025-02-09 12:23:43,096 - INFO - len(current_chunk) : 3957
+2025-02-09 12:23:43,096 - INFO - current_chunk_count :  26
+2025-02-09 12:23:43,096 - INFO - len(current_chunk) : 3378
+2025-02-09 12:23:43,096 - INFO - current_chunk_count :  27
+2025-02-09 12:23:43,096 - INFO - len(current_chunk) : 3948
+2025-02-09 12:23:43,097 - INFO - current_chunk_count :  28
+2025-02-09 12:23:43,097 - INFO - len(current_chunk) : 3989
+2025-02-09 12:23:43,097 - INFO - current_chunk_count :  29
+2025-02-09 12:23:43,097 - INFO - len(current_chunk) : 3799
+2025-02-09 12:23:43,097 - INFO - current_chunk_count :  30
+2025-02-09 12:23:43,097 - INFO - len(current_chunk) : 3667
+2025-02-09 12:23:43,097 - INFO - current_chunk_count :  31
+2025-02-09 12:23:43,098 - INFO - len(current_chunk) : 3890
+2025-02-09 12:23:43,098 - INFO - current_chunk_count :  32
+2025-02-09 12:23:43,098 - INFO - len(current_chunk) : 3305
+2025-02-09 12:23:43,098 - INFO - current_chunk_count :  33
+2025-02-09 12:23:43,098 - INFO - len(current_chunk) : 2150
+2025-02-09 12:23:43,098 - INFO - current_chunk_count :  34
+2025-02-09 12:23:43,098 - INFO - len(current_chunk) : 3267
+2025-02-09 12:23:43,098 - INFO - current_chunk_count :  35
+2025-02-09 12:23:43,099 - INFO - len(current_chunk) : 3253
+2025-02-09 12:23:43,099 - INFO - current_chunk_count :  36
+2025-02-09 12:23:43,099 - INFO - len(current_chunk) : 2621
+2025-02-09 12:23:43,099 - INFO - current_chunk_count :  37
+2025-02-09 12:23:43,099 - INFO - len(current_chunk) : 3435
+2025-02-09 12:23:43,099 - INFO - current_chunk_count :  38
+2025-02-09 12:23:43,099 - INFO - len(current_chunk) : 3180
+2025-02-09 12:23:43,099 - INFO - current_chunk_count :  39
+2025-02-09 12:23:43,100 - INFO - len(current_chunk) : 3386
+2025-02-09 12:23:46,423 - INFO - 没农 1/41 贸府 肯丰
+2025-02-09 12:23:53,498 - INFO - 没农 2/41 贸府 肯丰
+2025-02-09 12:23:57,713 - INFO - 没农 3/41 贸府 肯丰
+2025-02-09 12:24:03,369 - INFO - 没农 4/41 贸府 肯丰
+2025-02-09 12:24:25,360 - INFO - 没农 5/41 贸府 肯丰
+2025-02-09 12:24:28,205 - INFO - 没农 6/41 贸府 肯丰
+2025-02-09 12:24:33,322 - INFO - 没农 7/41 贸府 肯丰
+2025-02-09 12:24:36,346 - INFO - 没农 8/41 贸府 肯丰
+2025-02-09 12:24:39,910 - INFO - 没农 9/41 贸府 肯丰
+2025-02-09 12:24:45,747 - INFO - 没农 10/41 贸府 肯丰
+2025-02-09 12:24:51,327 - INFO - 没农 11/41 贸府 肯丰
+2025-02-09 12:24:53,862 - INFO - 没农 12/41 贸府 肯丰
+2025-02-09 12:24:57,024 - INFO - 没农 13/41 贸府 肯丰
+2025-02-09 12:25:00,347 - INFO - 没农 14/41 贸府 肯丰
+2025-02-09 12:25:06,028 - INFO - 没农 15/41 贸府 肯丰
+2025-02-09 12:25:09,466 - INFO - 没农 16/41 贸府 肯丰
+2025-02-09 12:25:13,137 - INFO - 没农 17/41 贸府 肯丰
+2025-02-09 12:25:26,468 - INFO - 没农 18/41 贸府 肯丰
+2025-02-09 12:25:31,372 - INFO - 没农 19/41 贸府 肯丰
+2025-02-09 12:25:35,296 - INFO - 没农 20/41 贸府 肯丰
+2025-02-09 12:25:40,810 - INFO - 没农 21/41 贸府 肯丰
+2025-02-09 12:25:44,996 - INFO - 没农 22/41 贸府 肯丰
+2025-02-09 12:25:47,902 - INFO - 没农 23/41 贸府 肯丰
+2025-02-09 12:25:54,900 - INFO - 没农 24/41 贸府 肯丰
+2025-02-09 12:25:59,618 - INFO - 没农 25/41 贸府 肯丰
+2025-02-09 12:26:04,662 - INFO - 没农 26/41 贸府 肯丰
+2025-02-09 12:26:08,668 - INFO - 没农 27/41 贸府 肯丰
+2025-02-09 12:26:12,877 - INFO - 没农 28/41 贸府 肯丰
+2025-02-09 12:26:16,823 - INFO - 没农 29/41 贸府 肯丰
+2025-02-09 12:26:20,384 - INFO - 没农 30/41 贸府 肯丰
+2025-02-09 12:26:23,802 - INFO - 没农 31/41 贸府 肯丰
+2025-02-09 12:26:27,583 - INFO - 没农 32/41 贸府 肯丰
+2025-02-09 12:26:31,278 - INFO - 没农 33/41 贸府 肯丰
+2025-02-09 12:26:35,633 - INFO - 没农 34/41 贸府 肯丰
+2025-02-09 12:26:41,097 - INFO - 没农 35/41 贸府 肯丰
+2025-02-09 12:26:44,062 - INFO - 没农 36/41 贸府 肯丰
+2025-02-09 12:26:45,979 - INFO - 没农 37/41 贸府 肯丰
+2025-02-09 12:26:48,580 - INFO - 没农 38/41 贸府 肯丰
+2025-02-09 12:26:53,706 - INFO - 没农 39/41 贸府 肯丰
+2025-02-09 12:26:58,512 - INFO - 没农 40/41 贸府 肯丰
+2025-02-09 12:27:02,657 - INFO - 没农 41/41 贸府 肯丰

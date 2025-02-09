@@ -162,7 +162,7 @@ import asyncio
 
 
 class HTMLAnalyzerBot:
-    def __init__(self, model_name: str = "EEVE_Q4_K_M:latest", chunk_size: int = 4000):
+    def __init__(self, model_name: str = "EEVE_test:latest", chunk_size: int = 4000):
         """
         HTML 분석을 위한 챗봇 초기화
         
