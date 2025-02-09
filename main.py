@@ -49,21 +49,21 @@ if __name__ == "__main__" :
 
     df = pd.read_csv("C:/Users/COM/VscodeProject/Crawling_n_Analyze_by_EEVE/data/checked_urls.csv")
 
-    for temp_num in range(1,11):
+    for temp_num in range(1,23):
 
-        Usable_urls = df.iloc[:temp_num*100,0].to_list()
+        Usable_urls = df.iloc[(temp_num-1)*50 : temp_num*50, 0].to_list()
         
         limit_html_len = 50000
         
-        for Usable_url in Usable_urls:
+        result_list = []
+        for i, Usable_url in enumerate(Usable_urls,1):
                 
-            # 실행
-            result_list = []
             
             result_of_LLM, clean_html_len = analyze_html(Usable_url, limit_html_len)
             
             print("type(result_of_LLM) : ", type(result_of_LLM))
             print("len(result_of_LLM) : ", len(result_of_LLM))
+            print(f"Current working count : {((temp_num-1)*50)+i} / {len(df)}")
             
             result_list.append([Usable_url, result_of_LLM, clean_html_len, limit_html_len])
             
