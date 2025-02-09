@@ -28,6 +28,11 @@ class WebRequestHandler:
             handler.setFormatter(formatter)
             self.logger.addHandler(handler)
 
+            # log를 파일에 출력
+            file_handler = logging.FileHandler('web_check.log')
+            file_handler.setFormatter(formatter)
+            self.logger.addHandler(file_handler)
+
     def get_url_content(self, url: str, timeout: int = 3) -> Optional[str]:
         """
         URL로부터 컨텐츠를 안전하게 가져오기

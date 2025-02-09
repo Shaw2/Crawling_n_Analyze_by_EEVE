@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import ollama
 from typing import List, Dict
 import logging
+import time
 
 import textwrap
 import re
@@ -161,7 +162,7 @@ import asyncio
 
 
 class HTMLAnalyzerBot:
-    def __init__(self, model_name: str = "EEVE_test:latest", chunk_size: int = 4000):
+    def __init__(self, model_name: str = "EEVE_Q4_K_M:latest", chunk_size: int = 4000):
         """
         HTML 분석을 위한 챗봇 초기화
         
@@ -184,6 +185,11 @@ class HTMLAnalyzerBot:
             handler.setFormatter(formatter)
             self.logger.addHandler(handler)
             
+            # log를 파일에 출력
+            file_handler = logging.FileHandler('analyze_html.log')
+            file_handler.setFormatter(formatter)
+            self.logger.addHandler(file_handler)
+                        
 
     def clean_html_from_url(self, url):
         """필요 없는 태그를 제거하는 함수"""
@@ -244,7 +250,10 @@ class HTMLAnalyzerBot:
                 current_chunk += section
             else:
                 if current_chunk:
-                    print("len(current_chunk) is appended in chunk : ", len(current_chunk))
+                    
+                    self.logger.info(f"current_chunk_count :  {len(chunks)}")
+                    self.logger.info(f"len(current_chunk) : {len(current_chunk)}")
+                    
                     chunks.append(current_chunk)
                 current_chunk = section
         
@@ -261,10 +270,12 @@ class HTMLAnalyzerBot:
         Args:
             html_content (str): 추가할 HTML 내용
         """
+        self.logger.info(f"len(cutted_clean_html) : {len(html_content)}")
         self.chunks = self.chunk_html(html_content)
+        
         self.current_context = f"HTML 분석을 시작합니다. 총 {len(self.chunks)}개의 청크가 있습니다."
     
-    def process_chunks(self) -> str:
+    def process_chunks(self, delay_second: float = 0.5) -> str:
         """
         모든 HTML 청크를 처리하고 분석
         
@@ -290,6 +301,9 @@ class HTMLAnalyzerBot:
                 messages=messages
             )
             
+            # 쓰로틀링으로 부하 조금 줄이기
+            time.sleep(delay_second)
+            
             messages.append({
                 "role": "assistant",
                 "content": response['message']['content']
@@ -310,7 +324,7 @@ class HTMLAnalyzerBot:
         
         return final_response['message']['content']
 
-def analyze_html(url: str):
+def analyze_html(url: str, limit_html_len: int):
     """
     HTML 분석 실행 함수
     
@@ -323,10 +337,14 @@ def analyze_html(url: str):
     analyzer = HTMLAnalyzerBot()
     
     clean_html = analyzer.clean_html_from_url(url)
-    analyzer.add_html_content(clean_html)
+    
+    cutted_clean_html = clean_html[:limit_html_len]
+    
+    analyzer.add_html_content(cutted_clean_html)
+    
     
     # return None
-    return analyzer.process_chunks()
+    return analyzer.process_chunks(), len(clean_html)
 
 # 실행 코드
 if __name__ == "__main__":
